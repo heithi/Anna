@@ -1,0 +1,269 @@
+/* Grundlayout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(5, 40, 169);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px; /* Padding hinzufügen für Mobilgeräte */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Größere Schriftgröße für Desktop */
+}
+
+/* Grid für die Buchstaben-Eingabe */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) 20px repeat(4, 1fr); /* Flexibles Layout */
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Größere Schriftgröße für Desktop */
+    text-transform: uppercase;
+    background-color: #222;
+    color: white;
+}
+
+/* Klassen für Feedback */
+.correct { background-color: #6aaa64; } /* Grün */
+.present { background-color: #c9b458; } /* Gelb */
+.absent { background-color: #3a3a3c; }  /* Grau */
+
+/* Tastatur */
+.keyboard {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.key {
+    width: 50px;
+    height: 60px;
+    margin: 2px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.5rem; /* Kleinere Schriftgröße für Mobilgeräte */
+}
+
+.key:hover {
+    background-color: #555;
+}
+
+/* Nachricht */
+.message {
+    margin-top: 20px;
+    font-size: 1.5rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Responsive Styles für das Grid */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(6, 1fr) 10px repeat(4, 1fr); /* Kleinere Lücke */
+        grid-gap: 3px; /* Weniger Abstand zwischen den Zellen */
+    }
+
+    .cell {
+        width: 30px; /* Kleinere Zellen */
+        height: 30px;
+        font-size: 1.2rem; /* Kleinere Schriftgröße */
+    }
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; /* Kleinere Schriftgröße für Mobilgeräte */
+        margin-bottom: 10px; /* Weniger Abstand nach unten */
+    }
+
+    .keyboard {
+        margin-top: 10px;
+        flex-direction: column; /* Reihenweise Darstellung */
+        align-items: center; /* Zentriere die gesamte Tastatur */
+        gap: 2px; /* Weniger Abstand zwischen den Zeilen */
+    }
+
+    .row {
+        flex: 0 1 auto; /* Jede Zeile passt sich der Breite an */
+        justify-content: center; /* Tasten zentriert anordnen */
+        gap: 2px; /* Weniger Abstand zwischen den Tasten */
+        margin: 0; /* Entferne zusätzliche Abstände */
+    }
+
+    .key {
+        width: 35px; /* Etwas größere Tasten für bessere Bedienung */
+        height: 40px;
+        font-size: 1rem; /* Schriftgröße anpassen */
+        margin: 0; /* Kein zusätzlicher Abstand zwischen den Tasten */
+    }
+}
+
+#snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+.snowflake {
+    position: absolute;
+    top: -10%; /* Start above the viewport */
+    animation: fall linear infinite; /* Animation for falling */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh); /* Fall to the bottom */
+    }
+}
+
+
+/* Positioniere den Baum rechts neben dem Grid */
+#tree {
+    position: absolute;
+    right: 75px; /* Rechts an den Rand setzen */
+    top: 50%; /* Vertikal mittig */
+    transform: translateY(-50%); /* Zentriere den Baum vertikal */
+    font-size: 15rem; /* Größeres Emoji */
+    z-index: 3; /* Über den Schneeflocken und dem Grid */
+}
+
+/* Grid Layout anpassen, um Platz für den Baum zu lassen */
+#grid {
+    position: relative;
+    z-index: 2; /* Baum bleibt oben */
+}
+
+#present {
+    position: absolute;
+    right: 1100px; /* Rechts an den Rand setzen */
+    top: 50%; /* Vertikal mittig */
+    transform: translateY(-50%); /* Zentriere den Baum vertikal */
+    font-size: 15rem; /* Größeres Emoji */
+    z-index: 3; /* Über den Schneeflocken und dem Grid */
+}
+
+
+/* Container für Wolken */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Höherer Bereich für die Wolken */
+    z-index: 2; /* Wolken über dem Hintergrund, aber unter dem Baum */
+    pointer-events: none; /* Ermöglicht Interaktionen mit anderen Elementen darunter */
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht das Umwickeln der Wolken */
+    justify-content: space-between; /* Wolken gleichmäßig verteilen */
+    padding: 10px;
+}
+
+/* Wolken-Design */
+.cloud {
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    margin-bottom: 20px; /* Abstand zwischen den Wolken */
+}
+
+/* Wolken unterschiedlicher Größe */
+.cloud:nth-child(1) {
+    width: 150px;
+    height: 100px;
+}
+
+.cloud:nth-child(2) {
+    width: 120px;
+    height: 80px;
+}
+
+.cloud:nth-child(3) {
+    width: 200px;
+    height: 130px;
+}
+
+.cloud:nth-child(4) {
+    width: 180px;
+    height: 120px;
+}
+
+.cloud:nth-child(5) {
+    width: 220px;
+    height: 140px;
+}
+
+.cloud:nth-child(6) {
+    width: 100px;
+    height: 60px;
+}
+
+.cloud:nth-child(7) {
+    width: 170px;
+    height: 110px;
+}
+
+.cloud:nth-child(8) {
+    width: 130px;
+    height: 90px;
+}
+
+.cloud:nth-child(9) {
+    width: 160px;
+    height: 100px;
+}
+
+
+/* Boden */
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Höhe des Bodens */
+    background-color: #8B4513; /* Brauner Boden */
+    z-index: 1; /* Boden unter den Wolken, aber über dem Hintergrund */
+}
+
+/* Schnee auf dem Boden */
+#snow {
+    position: absolute;
+    bottom: 40px; /* Positionierung des Schnees, damit er oben auf dem Boden liegt */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Höhe der Schneeschicht */
+    background-color: #fff; /* Weißer Schnee */
+    border-top-left-radius: 50%; /* Abgerundete Kante für einen natürlichen Effekt */
+    border-top-right-radius: 50%;
+    z-index: 2; /* Schnee über dem Boden */
+}
