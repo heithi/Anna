@@ -120,7 +120,7 @@ h1 {
   }
 
   h1 {
-    font-size: 1.5rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 1.6rem; /* Kleinere Schriftgröße für Mobilgeräte */
     margin-bottom: 10px;
     position: relative;
   }
@@ -140,11 +140,11 @@ h1 {
   }
   /* Weihnachtsbaum und Geschenk direkt über der Überschrift */
   #tree {
-    font-size: 2rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
   }
 
   #present {
-    font-size: 2rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
   }
 }
 
