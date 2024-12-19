@@ -164,6 +164,16 @@ h1 {
         border-top-left-radius: 30%; /* Anpassung der Ecken */
         border-top-right-radius: 30%;
     }
+
+#tree {
+    position: absolute;
+    right: 25px; /* Rechts an den Rand setzen */
+    top: 5%; /* Vertikal mittig */
+    transform: translateY(-50%); /* Zentriere den Baum vertikal */
+    font-size: 15rem; /* Größeres Emoji */
+    z-index: 3; /* Über den Schneeflocken und dem Grid */
+}
+
 }
 
 
