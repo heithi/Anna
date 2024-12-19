@@ -121,7 +121,7 @@ h1 {
     width: 35px; /* Etwas größere Tasten für bessere Bedienung */
     height: 40px;
     font-size: 1rem; /* Schriftgröße anpassen */
-    margin: 2px; /* Kein zusätzlicher Abstand zwischen den Tasten */
+    margin: 1px; /* Kein zusätzlicher Abstand zwischen den Tasten */
   }
 }
 
