@@ -122,7 +122,75 @@ h1 {
         font-size: 1rem; /* Schriftgröße anpassen */
         margin: 0; /* Kein zusätzlicher Abstand zwischen den Tasten */
     }
+
+    /* Anpassung für Wolken */
+    .clouds {
+        height: 80px; /* Kleinere Wolkenhöhe auf Mobilgeräten */
+        padding: 5px; /* Weniger Abstand für Wolken */
+    }
+
+    .cloud {
+        margin-bottom: 10px; /* Weniger Abstand zwischen den Wolken */
+    }
+
+    .cloud:nth-child(1) {
+        width: 120px;
+        height: 80px;
+    }
+
+    .cloud:nth-child(2) {
+        width: 100px;
+        height: 70px;
+    }
+
+    .cloud:nth-child(3) {
+        width: 160px;
+        height: 100px;
+    }
+
+    .cloud:nth-child(4) {
+        width: 140px;
+        height: 90px;
+    }
+
+    .cloud:nth-child(5) {
+        width: 180px;
+        height: 110px;
+    }
+
+    .cloud:nth-child(6) {
+        width: 90px;
+        height: 50px;
+    }
+
+    .cloud:nth-child(7) {
+        width: 150px;
+        height: 100px;
+    }
+
+    .cloud:nth-child(8) {
+        width: 110px;
+        height: 80px;
+    }
+
+    .cloud:nth-child(9) {
+        width: 140px;
+        height: 90px;
+    }
+
+    /* Anpassung des Bodens */
+    #ground {
+        height: 30px; /* Kleinere Bodenhöhe */
+    }
+
+    /* Schnee auf dem Boden */
+    #snow {
+        height: 8px; /* Kleinere Schneeschichthöhe */
+        border-top-left-radius: 30%; /* Anpassung der Ecken */
+        border-top-right-radius: 30%;
+    }
 }
+
 
 #snowflakes {
     position: fixed;
