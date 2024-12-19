@@ -94,7 +94,7 @@ h1 {
     display: flex;
     justify-content: center; /* Zentriert die beiden Elemente horizontal */
     align-items: center;
-    gap: 20px; /* Abstand zwischen Baum und Geschenk */
+    gap: 40px; /* Abstand zwischen Baum und Geschenk */
     margin-bottom: 0px; /* Abstand zum Grid */
   }
   
@@ -140,11 +140,11 @@ h1 {
   }
   /* Weihnachtsbaum und Geschenk direkt über der Überschrift */
   #tree {
-    font-size: 6rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
   }
 
   #present {
-    font-size: 6rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
   }
 }
 
