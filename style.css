@@ -6,15 +6,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100vh;
   margin: 0;
-  padding: 10px; /* Padding hinzufügen für Mobilgeräte */
+  padding: 10px; /* Padding für Mobilgeräte */
 }
 
 h1 {
   margin-bottom: 20px;
   font-size: 2.5rem; /* Größere Schriftgröße für Desktop */
+  position: relative; /* Wichtige Änderung für das Positionieren der Kinder-Elemente */
 }
 
 /* Grid für die Buchstaben-Eingabe */
@@ -88,6 +89,23 @@ h1 {
   text-align: center;
 }
 
+/* Container für Baum und Geschenk */
+#emoji-container {
+    display: flex;
+    justify-content: center; /* Zentriert die beiden Elemente horizontal */
+    align-items: center;
+    gap: 20px; /* Abstand zwischen Baum und Geschenk */
+    margin-bottom: 0px; /* Abstand zum Grid */
+  }
+  
+  
+/* Weihnachtsbaum und Geschenk */
+#tree, #present {
+    font-size: 10rem; /* Größere Schriftgröße für Desktop */
+    z-index: 3; /* Stellt sicher, dass sie über anderen Elementen sind */
+  }
+  
+
 /* Responsive Styles für das Grid */
 @media (max-width: 600px) {
   .grid {
@@ -100,18 +118,11 @@ h1 {
     height: 30px;
     font-size: 1.2rem; /* Kleinere Schriftgröße */
   }
-}
-@media (max-width: 600px) {
+
   h1 {
     font-size: 1.8rem; /* Kleinere Schriftgröße für Mobilgeräte */
-    margin-bottom: 10px; /* Weniger Abstand nach unten */
-  }
-
-  .keyboard {
-    margin-top: 10px;
-    flex-direction: column; /* Reihenweise Darstellung */
-    align-items: center; /* Zentriere die gesamte Tastatur */
-    gap: 2px; /* Weniger Abstand zwischen den Zeilen */
+    margin-bottom: 10px;
+    position: relative;
   }
 
   .row {
@@ -127,6 +138,14 @@ h1 {
     font-size: 1rem; /* Schriftgröße anpassen */
     margin: 0; /* Kein zusätzlicher Abstand zwischen den Tasten */
   }
+  /* Weihnachtsbaum und Geschenk direkt über der Überschrift */
+  #tree {
+    font-size: 6rem; /* Kleinere Schriftgröße für Mobilgeräte */
+  }
+
+  #present {
+    font-size: 6rem; /* Kleinere Schriftgröße für Mobilgeräte */
+  }
 }
 
 #snowflakes {
@@ -135,12 +154,13 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Allows clicks to pass through */
+  pointer-events: none; /* Ermöglicht Klicks durch Schneeflocken hindurch */
 }
+
 .snowflake {
   position: absolute;
-  top: -10%; /* Start above the viewport */
-  animation: fall linear infinite; /* Animation for falling */
+  top: -10%; /* Starten oberhalb des Viewports */
+  animation: fall linear infinite; /* Fallende Animation */
 }
 
 @keyframes fall {
@@ -148,31 +168,7 @@ h1 {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(100vh); /* Fall to the bottom */
+    transform: translateY(100vh); /* Bis zum unteren Bildschirmrand */
   }
 }
 
-/* Positioniere den Baum rechts neben dem Grid */
-#tree {
-  position: absolute;
-  right: 75px; /* Rechts an den Rand setzen */
-  top: 50%; /* Vertikal mittig */
-  transform: translateY(-50%); /* Zentriere den Baum vertikal */
-  font-size: 15rem; /* Größeres Emoji */
-  z-index: 3; /* Über den Schneeflocken und dem Grid */
-}
-
-/* Grid Layout anpassen, um Platz für den Baum zu lassen */
-#grid {
-  position: relative;
-  z-index: 2; /* Baum bleibt oben */
-}
-
-#present {
-  position: absolute;
-  right: 1100px; /* Rechts an den Rand setzen */
-  top: 50%; /* Vertikal mittig */
-  transform: translateY(-50%); /* Zentriere den Baum vertikal */
-  font-size: 15rem; /* Größeres Emoji */
-  z-index: 3; /* Über den Schneeflocken und dem Grid */
-}
