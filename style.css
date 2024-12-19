@@ -9,7 +9,7 @@ body {
   justify-content: flex-start;
   height: 100vh;
   margin: 0;
-  padding: 10px; /* Padding für Mobilgeräte */
+  padding: 20px; /* Padding für Mobilgeräte */
 }
 
 h1 {
@@ -89,23 +89,6 @@ h1 {
   text-align: center;
 }
 
-/* Container für Baum und Geschenk */
-#emoji-container {
-    display: flex;
-    justify-content: center; /* Zentriert die beiden Elemente horizontal */
-    align-items: center;
-    gap: 40px; /* Abstand zwischen Baum und Geschenk */
-    margin-bottom: 0px; /* Abstand zum Grid */
-  }
-  
-  
-/* Weihnachtsbaum und Geschenk */
-#tree, #present {
-    font-size: 10rem; /* Größere Schriftgröße für Desktop */
-    z-index: 3; /* Stellt sicher, dass sie über anderen Elementen sind */
-  }
-  
-
 /* Responsive Styles für das Grid */
 @media (max-width: 600px) {
   .grid {
@@ -138,14 +121,6 @@ h1 {
     font-size: 1rem; /* Schriftgröße anpassen */
     margin: 0; /* Kein zusätzlicher Abstand zwischen den Tasten */
   }
-  /* Weihnachtsbaum und Geschenk direkt über der Überschrift */
-  #tree {
-    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
-  }
-
-  #present {
-    font-size: 4rem; /* Kleinere Schriftgröße für Mobilgeräte */
-  }
 }
 
 #snowflakes {
@@ -171,4 +146,3 @@ h1 {
     transform: translateY(100vh); /* Bis zum unteren Bildschirmrand */
   }
 }
-
