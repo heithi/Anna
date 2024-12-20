@@ -23,7 +23,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(6, 1fr) 20px repeat(4, 1fr); /* Flexibles Layout */
   grid-gap: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .cell {
@@ -94,7 +94,7 @@ h1 {
   .grid {
     grid-template-columns: repeat(6, 1fr) 10px repeat(4, 1fr); /* Kleinere Lücke */
     grid-gap: 3px; /* Weniger Abstand zwischen den Zellen */
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .cell {
@@ -119,9 +119,9 @@ h1 {
 
   .key {
     width: 35px; /* Etwas größere Tasten für bessere Bedienung */
-    height: 40px;
+    height: 55px;
     font-size: 1rem; /* Schriftgröße anpassen */
-    margin: 1px; /* Kein zusätzlicher Abstand zwischen den Tasten */
+    margin: 2px 1px; /* Kein zusätzlicher Abstand zwischen den Tasten */
   }
 }
 
